@@ -1,7 +1,7 @@
 ﻿//Menu First ID
 
 $('#1').click(function () {
-    location.href = "Zack-Website.html";
+    location.href = "index.html";
 });
 
 $('.1').click(function(){
