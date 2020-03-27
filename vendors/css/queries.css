@@ -2172,7 +2172,7 @@ margin-left: 7%;
             margin-top: 2%;
     max-width: 15%;
     top: 50%;
-      left: 45%;
+      left: 50%;
       right: 50%;
       transform: translate(-50%, -50%);
     
@@ -2318,7 +2318,8 @@ float: 50vw;
                         -webkit-box-sizing: border-box;
                                 box-sizing: border-box;
                         }
-                      
+
+                        
 
 
     }
@@ -2327,7 +2328,7 @@ float: 50vw;
     /* Small phones: from 0 to 480px*/
     @media only screen and (max-width: 505px) {
 
-        .arrow {
+            .arrow {
             position: relative;
             width: 100%;
             text-align: center;
@@ -2497,7 +2498,7 @@ margin-left: 7%;
             margin-top: 2%;
     max-width: 15%;
     top: 50%;
-      left: 45%;
+      left: 50%;
       right: 50%;
       transform: translate(-50%, -50%);
     
@@ -2799,12 +2800,10 @@ margin-left: 7%;
             margin-top: 2%;
     max-width: 15%;
     top: 50%;
-      left: 45%;
+      left: 50%;
       right: 50%;
       transform: translate(-50%, -50%);
-    
-    
-        }
+    }
         .section { padding: 25px 0;}
 
         .Side-paragraph {
@@ -3025,10 +3024,7 @@ margin-bottom: -420px;
 margin-left: 2%;
 margin-right: 2%;
 max-width: 95%;
-
-
-
- }
+}
 
 
 
@@ -3089,8 +3085,6 @@ max-width: 95%;
             margin-top: 0px; 
             margin-bottom: 0px;
             padding-bottom: -50px;
-    
-           
         }
         
         .About-Header {
@@ -3122,9 +3116,9 @@ max-width: 95%;
 
         .Piton-Fitness-Logo {
             margin-top: 2%;
-    max-width: 15%;
+    max-width: 20%;
     top: 50%;
-      left: 45%;
+      left: 50%;
       right: 50%;
       transform: translate(-50%, -50%);
     }
@@ -3276,6 +3270,30 @@ float: 50vw;
 
     /* smaller than 360 px wide */
     @media only screen and (max-width: 370px) {
+
+        .Piton-Fitness-Logo {
+            margin-top: 2%;
+    max-width: 20%;
+    top: 50%;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+        .Side-paragraph {
+            left:1%;
+            top: -13%;
+            bottom: -15%;
+            position:relative;
+            width:85%;
+            height: auto;
+            text-align:center;
+            max-width:100%;
+            max-height:auto;
+            margin-top: 0px; 
+            margin-bottom: 0px;
+            padding-bottom: -50px;
+        }
         
         .my-projects {margin-top: 90%;}
 
@@ -3323,7 +3341,7 @@ float: 50vw;
            left: 45%;
            max-width: 34px; 
             transform: translateX(-50, 10);
-            margin-top: 85px;
+            margin-top: 78px;
             margin-bottom: 0px;
             padding-bottom: 0%;
           }
