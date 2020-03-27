@@ -2327,6 +2327,20 @@ float: 50vw;
     /* Small phones: from 0 to 480px*/
     @media only screen and (max-width: 505px) {
 
+        .arrow {
+            position: relative;
+            width: 100%;
+            text-align: center;
+           top: 0%;
+           left: 45%;
+           max-width: 34px; 
+            transform: translateX(-50, 10);
+            margin-top: 85px;
+            margin-bottom: 0px;
+            padding-bottom: 0%;
+          }
+
+
         input[type=text],
 input[type=email],
 select,
@@ -2670,12 +2684,13 @@ float: 50vw;
             text-align: center;
            top: 0%;
            left: 45%;
-           max-width: 55px; 
+           max-width: 34px; 
             transform: translateX(-50, 10);
-            margin-top: 100px;
+            margin-top: 90px;
             margin-bottom: 0px;
             padding-bottom: 0%;
           }
+
 
 
         
@@ -2972,9 +2987,9 @@ float: 50vw;
             text-align: center;
            top: 0%;
            left: 45%;
-           max-width: 55px; 
+           max-width: 34px; 
             transform: translateX(-50, 10);
-            margin-top: 100px;
+            margin-top: 90px;
             margin-bottom: 0px;
             padding-bottom: 0%;
           }
@@ -3267,15 +3282,15 @@ float: 50vw;
         #FancyHeader {
             margin: 0px 5%;
             padding-top: 22%;
-            max-width: 70%;
+            max-width: 65%;
             max-height: auto;
             overflow: hidden;
-            width: 200px;
+            width: 195px;
             height: auto;
             font-weight: 600;
          /* transform: translate(20%, 30%); */
             line-height: 1;
-            margin-left: -40px;
+            margin-left: -45px;
             text-align:left;
             font-size: 1.5rem;
             color: #edeee9;
@@ -3299,6 +3314,20 @@ float: 50vw;
 }
 
         .Form-Text {font-size: 20px;}
+
+        .arrow {
+            position: relative;
+            width: 100%;
+            text-align: center;
+           top: 0%;
+           left: 45%;
+           max-width: 34px; 
+            transform: translateX(-50, 10);
+            margin-top: 85px;
+            margin-bottom: 0px;
+            padding-bottom: 0%;
+          }
+
 
        
 
