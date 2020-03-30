@@ -3282,7 +3282,7 @@ float: 50vw;
 
         .Side-paragraph {
             left:1%;
-            top: -13%;
+            top: -15%;
             bottom: -15%;
             position:relative;
             width:85%;
@@ -3339,9 +3339,9 @@ float: 50vw;
             text-align: center;
            top: 0%;
            left: 45%;
-           max-width: 34px; 
+           max-width: 32px; 
             transform: translateX(-50, 10);
-            margin-top: 78px;
+            margin-top: 66px;
             margin-bottom: 0px;
             padding-bottom: 0%;
           }
