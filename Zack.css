@@ -253,7 +253,7 @@ color: 2B2118;
 
 /* Reusable Css */
 
-.row {
+#row {
     max-width: 1440px;
     margin: 0 auto;
 }
