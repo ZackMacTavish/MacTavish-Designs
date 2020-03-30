@@ -2984,11 +2984,11 @@ float: 50vw;
             position: relative;
             width: 100%;
             text-align: center;
-           top: 0%;
+           top: -1%;
            left: 45%;
-           max-width: 34px; 
+           max-width: 32px; 
             transform: translateX(-50, 10);
-            margin-top: 90px;
+            margin-top: 72px;
             margin-bottom: 0px;
             padding-bottom: 0%;
           }
@@ -3018,6 +3018,7 @@ float: 50vw;
             animation-iteration-count: infinite;
  }
 
+ 
  .intro-text {
 margin-top: 0px;
 margin-bottom: -420px;
@@ -3074,7 +3075,7 @@ max-width: 95%;
 
         .Side-paragraph {
             left:1%;
-            top: -10%;
+            top: -19%;
             bottom: -15%;
             position:relative;
             width:85%;
