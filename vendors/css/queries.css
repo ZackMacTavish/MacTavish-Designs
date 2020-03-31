@@ -1,5 +1,44 @@
 ﻿
 
+
+
+/* Largo Screens */
+@media only screen and (min-width: 1440px){
+body {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.my-projects-2 {
+    list-style: none;
+    position: absolute;
+    margin-left: -7.5%;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    max-width: 100%;
+    width: 100%;
+    max-height: auto; 
+    height: auto;
+}
+
+.meals-showcase  {
+    
+    max-width: 100%;
+    width: 100%;
+    max-height: auto; 
+    height: auto;
+}
+
+
+
+
+
+}
+
 /* Big tablet to 1200px (widths smallers than the 1140px row) */
 @media only screen and (max-width: 1380px) {
 
