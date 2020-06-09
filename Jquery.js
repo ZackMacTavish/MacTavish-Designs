@@ -11,7 +11,7 @@
 
         // Home Page logo clicks to home page
         $('.LogoJs-1').click(function(){
-          location.href = "index2.html";     //block of code that runs when the click event triggers
+          location.href = "index.html";     //block of code that runs when the click event triggers
         });
         
 

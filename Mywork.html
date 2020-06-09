@@ -4,49 +4,66 @@
  <meta charset = "UTF-8">
  <title>Zack-Website.html</title>
  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
- <link rel = "stylesheet" type = "text/css" href = "Zack.css" />
- <link rel="stylesheet" type="text/css" href="grid.css" />
+ <link rel = "stylesheet" type = "text/css" href = "output.css" />
  <link rel="stylesheet" type="text/css" href="vendors/css/animate.css" />
- <link rel="stylesheet" type="text/css" href="vendors/css/queries.css" />
+ <link rel="stylesheet" type="text/css" href="vendors/css/Newqueries.css" />
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
    </head>
  <body>
-  <section class="header-rectangle"></section>
-    <div><img src='resources/img/Final-M-SinglePiece.svg' class = "Logo LogoJs-1"> </div>
+      <!-- header: logo, Home, Projects, About, Contact-->
+      <nav>
+        <section class="header-rectangle"></section>
+        <div class="parent">
+            <div class="header">
+        
+                <img src='resources/img/Final-M-SinglePiece.svg' class = "Logo LogoJs-1"> 
 
- <!-- partial:index.partial.html -->
+            <ul class="menu">
+                    <!--<li id="1" data-text="Home">Home</li>-->
+                    <li id="2" data-text="Projects">Projects</li>
+                    <li id="3" data-text="About">About</li>
+                    <li id="4" data-text="Contact">Contact</li>
+                </ul>
 
-   <button class="menu-toggle"></button>
-   <nav>
-     <ul class="menu">
-       <li id="1" data-text="Home">Home</li>
-       <li id="2" data-text="Projects">Projects</li>
-       <li id="3" data-text="About">About</li>
-       <li id="4" data-text="Contact">Contact</li>
-     </ul>
-   </nav>
-   <!-- partial -->
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-   <script  src="./Zack.js"></script>
-   
-   <section class="Projects-listed" >
-     <div class="row">
-     <h5 class="Projects-class-2">MY PROJECTS</h5>
-    <img class="Fuul-listed" src="resources/img/ThreePillars-1000x800.png" alt="Three Pillars" />
-    <img src="resources/img/VS-1000x800.png" alt="Vayner Sports" class="Fuul-listed VaynerSportsJs-1" />
-    <img class="Fuul-listed PitonFitnessJs-1" src="resources/img/Piton-Cover.png" alt="Piton" />
-    <img class="Fuul-listed FuulJs-1" src="resources/img/1000x800Fuul.png" alt="Fuul" />
-    <img class="Fuul-listed CCAJs-1" src="resources/img/CCA-ProjectsCover.png" alt="CCA" />
-    <img class="Fuul-listed LoudJs-1" src="resources/img/LoudLuxury-CoverProjects.png" alt="Loud Luxury" />
-    <img class="Fuul-listed LoudJs-1" src="resources/img/BTV-ProjectsCover.png" alt="Better Ventures Tomorrow" />
-    <img class="Fuul-listed LoudJs-1" src="resources/img/SeriousTools-ProjectsCover.png" alt="Serious Tools" />
+                
+            </div>
+        </div>
+                
+    </nav>
+
+    <!-- partial -->
+     
     
     
-    </div>
-    </section>
+      <section class="Projects-listed-2" >
+        <h5 class="Projects-class">MY PROJECTS</h5>
+
+        <div class="row-1">
+              <img class="Fuul-listed" src="resources/img/ThreePillars-1000x800.png" alt="Three Pillars" />
+            <img class="Fuul-listed VaynerSportsJs-1" src="resources/img/VS-1000x800.png" alt="Vayner Sports"  />
+           
+        </div>
+
+        <div class="row-2">
+
+          <img class="Fuul-listed PitonFitnessJs-1" src="resources/img/Piton-Cover.png" alt="Piton" />
+          <img class="Fuul-listed FuulJs-1" src="resources/img/1000x800Fuul.png" alt="Fuul" />
+      </div>
+        
+      <div class="row-3">
+          <img class="Fuul-listed CCAJs-1" src="resources/img/CCA-ProjectsCover.png" alt="CCA" />
+          <img class="Fuul-listed LoudJs-1" src="resources/img/LoudLuxury-CoverProjects.png" alt="Loud Luxury" />
+          
+      </div>
+
+      <div class="row-4">
+      <img class="Fuul-listed LoudJs-1" src="resources/img/BTV-ProjectsCover.png" alt="Better Ventures Tomorrow" />
+          <img class="Fuul-listed LoudJs-1" src="resources/img/SeriousTools-ProjectsCover.png" alt="Serious Tools" />
+        </div>
+      </section>
     
   
-    </main>
 
     
     <script src="Jquery.js"></script>
@@ -55,4 +72,5 @@
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script  src="./Zack.js"></script>
  </body>

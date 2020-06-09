@@ -76,17 +76,19 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 0 15em 0 15em;
+  margin: 0;
   z-index: -5;
+}
+
+.intro-text {
+  margin: 0 25vw 0 25vw;
 }
 
 #site__main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100hv;
   background: #edeee9;
-  margin: 0 15em 0 15em;
 }
 
 @keyframes animateShadow {
@@ -110,7 +112,7 @@ a {
   }
 }
 #FancyHeader {
-  margin: 2em 0 0.3em 0;
+  margin: 2em 0 0 0;
   padding: 0 60px 0 30%;
   overflow: hidden;
   font-weight: 600;
@@ -136,12 +138,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   margin: -15em 0 0 0;
 }
 
 .arrow {
   max-width: 5%;
-  margin: 2em 0 0 0;
+  margin: 0.4em 0 0 0;
 }
 
 .My-Work {
@@ -433,9 +436,13 @@ a {
 /*-------------------------------------------*/
 /* My Work Boxes */
 /*-------------------------------------------*/
+.Parent-Works {
+  width: 100vw;
+}
+
 .Side-paragraph {
   position: fixed;
-  max-width: 25%;
+  width: 25%;
   margin: 25em 5em 5em 5em;
 }
 
@@ -444,7 +451,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex: 2;
+  width: 50vw;
   margin: 125px 5% 0 39%;
 }
 
@@ -462,15 +469,70 @@ a {
 .Projects-class {
   font-size: 2.5em;
   color: #182589;
+  margin: 0 0 25px 0;
 }
 
 .Three-Pillars-2 {
   margin: 15px 0 0 0;
+  width: 50vw;
   border-radius: 15px;
 }
 
 .ThreePillars-Gif {
-  margin: 15px 0 15px 0;
+  margin: 0 0 15px 0;
+  width: 35vw;
+}
+
+.Three-Pillars-6 {
+  margin: 15px 0 0 0;
+  width: 50vw;
+  border-radius: 15px;
+}
+
+/*-------------------------------------------*/
+/* Projects Class */
+/*-------------------------------------------*/
+.Projects-listed-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+  margin: 125px 5% 0 39%;
+  margin: 200px auto auto auto;
+}
+.Projects-listed-2 .row-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5vw 0 5vw;
+  justify-content: space-between;
+}
+.Projects-listed-2 .row-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5vw 0 5vw;
+  justify-content: space-between;
+}
+.Projects-listed-2 .row-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5vw 0 5vw;
+  justify-content: space-between;
+}
+.Projects-listed-2 .row-4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5vw 0 5vw;
+  justify-content: space-between;
+}
+.Projects-listed-2 .Fuul-listed {
+  width: 45vw;
+  margin: 10px 1vw 10px 1vw;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=output.css.map */
