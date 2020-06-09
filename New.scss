@@ -12,6 +12,8 @@
     text-decoration: none;
   }
 
+
+
   @font-face {
     font-family: 'itc_avant_garde_gothicbook';
     src: url('Fonts/itc_avant_garde_gothic_book_regular-webfont.woff2') format('woff2'),
@@ -128,7 +130,7 @@
   }
   
   #FancyHeader {
-    margin: 2em 0 0 0;
+    margin: 5vw 0 0 0;
     padding: 0 60px 0 30%;
     overflow: hidden;
     font-weight: 600;
@@ -396,7 +398,7 @@
   .Side-paragraph {
     position: fixed;
     width: 25%;
-    margin: 25em 5em 5em 5em;
+    margin: 28% 5em 5em 5em;
   }
 
   .Projects-listed {
@@ -414,10 +416,14 @@
     line-height: 1.2;
     }
 
-    .Projects-class {
+    @mixin header-styles {
       font-size: 2.5em;
       color: #182589;
       margin: 0 0 25px 0;
+
+    }
+    .Projects-class {
+      @include header-styles
       }
 
       .Three-Pillars-2 {
@@ -428,7 +434,7 @@
 
       .ThreePillars-Gif {
         margin: 0 0 15px 0;
-        width: 35vw;
+        width: 31vw;
       }
 
       .Three-Pillars-6 {
@@ -446,7 +452,7 @@
 
 .Projects-listed-2 {
    @include Projects-Class-styles;
-   margin: 200px auto auto auto;
+   margin: 10% auto auto auto;
   
 
         @mixin row-styles {
@@ -455,8 +461,7 @@
           align-items: center;
           margin: 0 5vw 0 5vw;
           justify-content: space-between;
-          
-      }
+          }
 
         .row-1 {
           @include row-styles
@@ -475,11 +480,129 @@
 
         .Fuul-listed {
           width: 45vw;
-          margin: 10px 1vw 10px 1vw;
+          margin: 1vw 1vw 10px 1vw;
           border-radius: 15px;
           }
+}
+
+    /*-------------------------------------------*/
+/* About Section */
+/*-------------------------------------------*/
+
+.About-Section {
+  display: flex; 
+  flex-direction: row-reverse;
+  margin: 11% 5% 0 5%;
+}
+.My-Photo {
+  width: 40vw;
 
 }
+.Parent-About {
+display: flex;
+flex-direction: column;
+margin: 0 5% 0 5%;
+}
+
+.AboutText {
+  @include header-styles;
+  margin: 15% 0 7% 0;
+}
+
+a { 
+  color: #182589
+}
+
+   /*-------------------------------------------*/
+/* Form Section */
+/*-------------------------------------------*/
+
+.Form-Section {
+  display: flex; 
+  flex-direction: column;
+  margin: 11% 5% 0 5%;
+
+}
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+  }
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.Send-it {
+padding: 10px 20px;
+font-family: 'itc_avant_garde_gothicbook';
+color: #ffffff;
+background-color: #283FE5;
+border-radius: 50px;
+border: none;
+}
+
+.Send-it:hover {
+  padding: 10px 20px;
+  font-family: 'itc_avant_garde_gothicbook';
+  color: #ffffff;
+  background-color: rgb(20, 42, 204);
+  border-radius: 50px;
+  
+  } 
+
+textarea {
+  height: 100px;
+
+}
+
+input[type=checkbox] {
+  margin: 10px 5px 20px 0;
+
+}
+
+*:focus {outline: none;
+
+}
+
+.Form-Text {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+margin: 2% 0 0 0;
+
+}
+
+.Contact-Text {
+  display: flex;
+  justify-content: center;
+  @include header-styles;
+  margin: 0.4% 0 0 0;
+
+}
+
+/*.typeme-2 {
+margin: 1% 0 0 0;
+
+} */
+
+.col {
+  margin: 0.8% 0 0 0;
+}
+
+
 
  
 
