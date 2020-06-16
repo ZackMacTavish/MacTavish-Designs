@@ -554,12 +554,14 @@ width: 35vw;
   margin: 11% 5% 0 5%;
 
   .Image {
+    max-width: 960px;
     margin: auto;
 
     .My-Photo {
       display: flex;
       height: 40vw;
       margin: auto;
+      
     
     }
 
