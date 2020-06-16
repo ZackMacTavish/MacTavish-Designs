@@ -552,7 +552,7 @@ width: 35vw;
   display: flex; 
   flex-direction: row-reverse;
   align-items: center;
-  margin: 10% 5% 9% 5%;
+  margin: 10% 5% 0 5%;
   
  
   .Parent-About {
@@ -563,7 +563,7 @@ width: 35vw;
 
     .AboutText {
       @include header-styles;
-      margin: 15% 0 3% 0;
+      margin: 6% 0 3% 0;
     }
     
     a { 
