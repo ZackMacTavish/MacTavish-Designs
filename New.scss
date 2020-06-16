@@ -552,26 +552,37 @@ width: 35vw;
   display: flex; 
   flex-direction: row-reverse;
   margin: 11% 5% 0 5%;
-}
-.My-Photo {
-  height: 40vw;
-  margin: auto;
 
-}
-.Parent-About {
-display: flex;
-flex-direction: column;
-margin: 0 5% 0 5%;
+  .Image {
+    margin: auto;
+
+    .My-Photo {
+      display: flex;
+      height: 40vw;
+      margin: auto;
+    
+    }
+
+
+  }
+
+  
+  .Parent-About {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5% 0 5%;
+  }
+  
+  .AboutText {
+    @include header-styles;
+    margin: 15% 0 7% 0;
+  }
+  
+  a { 
+    color: #182589
+  }
 }
 
-.AboutText {
-  @include header-styles;
-  margin: 15% 0 7% 0;
-}
-
-a { 
-  color: #182589
-}
 
 /*-------------------------------------------*/
 /* Form Section */
