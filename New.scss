@@ -73,6 +73,7 @@
 .Logo {
     height: 45px;
     z-index: 1;
+    cursor: pointer;
   }
 
 
@@ -93,6 +94,16 @@
     .intro-text {
       
       margin: 0 25vw 0 25vw;
+
+
+      @media (max-width: 900px) {
+        width: 60%;
+        margin: 0;
+         }
+      @media (max-width: 550px) {
+        width: 90%;
+       
+         }
       
     }
 
@@ -135,7 +146,6 @@
     overflow: hidden;
     font-weight: 600;
     line-height: 1.1;
-    font-size: 60px;
     text-align:left;
     /*-webkit-transform: translate(20%, 0%);
         -ms-transform: translate(20%, 0%);
@@ -150,6 +160,18 @@
             animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
+
+            @media (max-width: 680px) {
+              font-size: 2.5rem;
+              padding: 5% 60px 10% 30%;
+            }
+
+            @media (max-width: 560px) {
+              font-size: 2.1rem;
+              padding: 7% 60px 25% 30%;
+            }
+
+
   }
 
 
@@ -165,6 +187,10 @@
   .arrow {
     max-width: 5%;
       margin: 0.4em 0 0 0;
+
+      @media (max-width: 915px) {
+        margin: 3em 0 0 0;
+        }
       }
 
 .My-Work {
@@ -178,8 +204,15 @@
     font-family: 'itc_avant_garde_gothicbook';
     font-size: 45px;
     margin: 0 0 0 0.5em;
+
+    
 }
 
+.Line {
+  @media (max-width: 800px) {
+    width: 60%;
+  }
+}
 /* Line Animation */
 .js--wp-1 {
   opacity: 0;
@@ -218,7 +251,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 
-            @media (max-width: 768px) {
+            @media (max-width: 810px) {
               width: 50%;
             }
 
@@ -269,6 +302,7 @@
             padding: 0;
             -webkit-box-sizing: border-box;
                     box-sizing: border-box;
+                    cursor: pointer;
   }
   
   .clearfix {zoom: 1}
@@ -402,6 +436,12 @@
 
 .Parent-Works {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+
+    @media (max-width: 980px) {
+      flex-direction: column-reverse;
+    }
 }
 
   
@@ -409,12 +449,28 @@
   .Side-paragraph {
     position: fixed;
     width: 25%;
-    margin: 43vh 5em 5em 5em;
+    margin: 55vh 5em 5em 5em;
+    
+      @media (max-width: 980px) {
+        position: relative;
+        width: 80%;
+        margin: 10vh 5em 5em 5em;
+      }
+
   }
 
   .Projects-listed {
-    @include Projects-Class-styles
-  }
+    @include Projects-Class-styles;
+    @media (max-width: 980px) {
+      position: relative;
+      width: 100%;
+      margin: 125px 0 0 0;
+      z-index: -10;
+    }
+   
+    }
+    
+  
 
   .ThreePillars-Header {
     font-size: 3em;
