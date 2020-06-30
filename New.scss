@@ -753,7 +753,21 @@ width: 35vw;
 .Form-Section {
   display: flex; 
   flex-direction: column;
-  margin: 11% 5% 0 5%;
+  margin: 9% 5% 0 5%;
+    
+    @media (max-width: 1010px) {
+      margin: 13% 5% 0 5%;
+  }
+  @media (max-width: 720px) {
+    margin: 15% 5% 0 5%;
+}
+@media (max-width: 625px) {
+  margin: 20% 5% 0 5%;
+}
+
+@media (max-width: 505px) {
+  margin: 22% 5% 0 5%;
+}
 
 }
 
@@ -814,7 +828,11 @@ display: flex;
 -webkit-box-pack: center;
     -ms-flex-pack: center;
         justify-content: center;
-margin: 2% 0 0 0;
+margin: 2% 0 1% 0;
+
+  @media (max-width: 720px) {
+    margin: 3% 0 4% 0;
+}
 
 }
 
