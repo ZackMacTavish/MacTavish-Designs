@@ -731,7 +731,14 @@ width: 35vw;
         
         width: 40%;
         margin: auto;
+        @media (max-width: 760px) {
+          width: 55%;
+        }
+        @media (max-width: 505px) {
+          width: 95%;
+        }
        }
+
     @media (max-width: 760px) {
       flex-direction: column-reverse;
       margin: 20% 5% 0 5%;
