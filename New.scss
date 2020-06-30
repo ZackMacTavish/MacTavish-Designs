@@ -171,6 +171,11 @@
               padding: 7% 60px 25% 30%;
             }
 
+            @media (max-width: 400px) {
+              font-size: 1.5rem;
+              padding: 15% 60px 25% 30%;
+            }
+
 
   }
 
@@ -182,6 +187,11 @@
     align-items: center;
     justify-content: flex-start;
     margin: -15em 0 0 0;
+    
+    @media (max-width: 400px) {
+      margin: -5em 0 0 0;
+    }
+   
 }
 
   .arrow {
@@ -198,6 +208,10 @@
     flex-direction: column;
     margin: 10em 0 0 5em;
     justify-content: flex-start;
+
+    @media (max-width: 400px) {
+      margin: 5em 0 0 5em;
+    }
     }
 
 .My-Work-Text {
