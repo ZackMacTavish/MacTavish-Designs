@@ -441,6 +441,7 @@
 
     @media (max-width: 980px) {
       flex-direction: column-reverse;
+      align-items: center;
     }
 }
 
@@ -453,7 +454,7 @@
     
       @media (max-width: 980px) {
         position: relative;
-        width: 80%;
+        width: 60%;
         margin: 10vh 5em 5em 5em;
         z-index: -6;
       }
@@ -491,13 +492,25 @@
 
     }
     .Projects-class {
-      @include header-styles
+      @include header-styles;
+
+      @media (max-width: 680px) {
+        font-size: 1.5rem;
+      
+      }
       }
 
       .Three-Pillars-2 {
         margin: 15px 0 0 0;
         width: 50vw;
         border-radius: 15px; 
+
+        @media (max-width: 980px) {
+          width: 70vw;
+        }
+        @media (max-width: 680px) {
+          width: 90vw;
+        }
       }
 
       .ThreePillars-Gif {
@@ -509,6 +522,13 @@
         margin: 15px 0 0 0;
         width: 50vw;
         border-radius: 15px; 
+
+        @media (max-width: 980px) {
+          width: 70vw;
+        }
+        @media (max-width: 680px) {
+          width: 90vw;
+        }
 
       }
 
@@ -570,6 +590,10 @@ width: 35vw;
 
 .Lathe-preloader {
   width: 55vw;
+
+  @media (max-width: 680px) {
+    width: 90vw;
+  }
 }
 
 /*-------------------------------------------*/
