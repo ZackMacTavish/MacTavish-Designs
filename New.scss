@@ -644,28 +644,63 @@ width: 35vw;
           }
 
         .row-1 {
-          @include row-styles
-      }
+          @include row-styles;
+          @media (max-width: 505px) {
+            flex-direction: column;
+          }
+        }
 
       .row-2 {
-        @include row-styles
+        @include row-styles;
+        @media (max-width: 505px) {
+          flex-direction: column;
+        }
       }
 
       .row-3 {
-        @include row-styles
+        @include row-styles;
+        @media (max-width: 505px) {
+          flex-direction: column;
+        }
       }
       .row-4 {
-        @include row-styles
+        @include row-styles;
+        @media (max-width: 505px) {
+          flex-direction: column;
+        }
       }
 
         .Fuul-listed {
           width: 45vw;
           margin: 1vw 1vw 10px 1vw;
           border-radius: 15px;
+          @media (max-width: 505px) {
+            width: 95vw;
+          }
+          }
+
+          @media (max-width: 980px) {
+            margin: 13% auto auto auto;
+          }
+
+          @media (max-width: 750px) {
+            margin: 15% auto auto auto;
+          }
+          @media (max-width: 660px) {
+            margin: 17% auto auto auto;
+          }
+          @media (max-width: 605px) {
+            margin: 19% auto auto auto;
+          }
+          @media (max-width: 545px) {
+            margin: 22% auto auto auto;
+          }
+          @media (max-width: 411px) {
+            margin: 30% auto auto auto;
           }
 }
 
-    /*-------------------------------------------*/
+/*-------------------------------------------*/
 /* About Section */
 /*-------------------------------------------*/
 
@@ -680,7 +715,6 @@ width: 35vw;
     display: flex;
     flex-direction: column;
     margin: 0 5% 0 5%;
-      
 
     .AboutText {
       @include header-styles;
