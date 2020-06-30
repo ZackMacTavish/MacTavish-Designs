@@ -245,7 +245,10 @@
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            z-index: -8;
+           
+            @media (max-width: 500px) {
+              z-index: -8;
+            }
     
 }
   
@@ -467,6 +470,7 @@
     position: fixed;
     width: 25%;
     margin: 55vh 5em 5em 5em;
+    
     
       @media (max-width: 980px) {
         position: relative;
