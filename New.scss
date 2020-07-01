@@ -695,9 +695,11 @@ width: 35vw;
           width: 45vw;
           margin: 1vw 1vw 10px 1vw;
           border-radius: 15px;
+          
 
           &:hover {
             opacity: 0.9;
+            z-index: -5;
           }
 
           @media (max-width: 505px) {
