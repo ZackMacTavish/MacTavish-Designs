@@ -81,7 +81,8 @@
       cursor: pointer;
   }
   @media(max-width: 505px) {
-    opacity: 0;
+    flex: 0.85;
+    opacity: 1;
   }
     
 }
