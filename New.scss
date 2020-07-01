@@ -702,6 +702,11 @@ width: 35vw;
             z-index: -5;
           }
 
+          &:active {
+            opacity: 0.9;
+            z-index: -5;
+          }
+
           @media (max-width: 505px) {
             width: 95vw;
           }
