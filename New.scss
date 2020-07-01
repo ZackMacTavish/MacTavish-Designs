@@ -566,6 +566,14 @@
       .ThreePillars-Gif {
         margin: 0 0 15px 0;
         width: 31vw;
+
+        @media (max-width: 880px) {
+          width: 40vw;
+        }
+
+        @media (max-width: 700px) {
+          width: 50vw;
+        }
       }
 
       .Three-Pillars-6 {
@@ -589,6 +597,14 @@
       .VaynerSports-Gif{
         width: 23vw;
 
+        @media (max-width: 880px) {
+          width: 30vw;
+        }
+
+        @media (max-width: 700px) {
+          width: 40vw;
+        }
+
       }
 
 
@@ -599,6 +615,14 @@
 .Piton-Fitness-Logo{
   width: 5vw;
 
+  @media (max-width: 880px) {
+    width: 9vw;
+  }
+
+  @media (max-width: 700px) {
+    width: 12vw;
+  }
+
 }
 
 /*-------------------------------------------*/
@@ -608,6 +632,13 @@
 
 .CCA-Logo {
   width: 15vw;
+  @media (max-width: 880px) {
+    width: 18vw;
+  }
+
+  @media (max-width: 700px) {
+    width: 21vw;
+  }
 }
 
 /*-------------------------------------------*/
@@ -617,25 +648,48 @@
 .Loud-Logo {
   width: 15vw;
   margin-bottom: 10px;
+
+  @media (max-width: 880px) {
+    width: 18vw;
+  }
+
+  @media (max-width: 700px) {
+    width: 24vw;
+  }
 }
 
 
 /*-------------------------------------------*/
-/* CCA Page */
+/* BVT Page */
 /*-------------------------------------------*/
 
 
 .BVT-Logo {
 width: 35vw;
 
+@media (max-width: 880px) {
+  width: 40vw;
+}
+
+@media (max-width: 700px) {
+  width: 50vw;
+}
+
 }
 
 
 /*-------------------------------------------*/
-/* CCA Page */
+/* Serious Page */
 /*-------------------------------------------*/
 .Serious-Logo {
   width: 12vw;
+  @media (max-width: 880px) {
+    width: 15vw;
+  }
+  
+  @media (max-width: 700px) {
+    width: 22vw;
+  }
 }
 
 .Lathe-preloader {
@@ -697,15 +751,15 @@ width: 35vw;
           border-radius: 15px;
           
 
-          &:hover {
+          /* &:hover {
             opacity: 0.9;
             z-index: -5;
           }
 
-          &:active {
+          &:active {  
             opacity: 0.9;
             z-index: -5;
-          }
+          }*/
 
           @media (max-width: 505px) {
             width: 95vw;
