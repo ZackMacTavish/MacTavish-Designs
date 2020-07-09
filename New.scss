@@ -5,6 +5,10 @@
     padding: 0;
     font-family: 'itc_avant_garde_gothicbook';
   }
+/* remove horizontal scrolling, and white space on mobile */
+  html, body {
+    overflow-x:hidden;
+}
   /* Remove formatting from links*/
 
   .Home-nav {
