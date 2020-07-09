@@ -7,7 +7,7 @@
   }
 /* remove horizontal scrolling, and white space on mobile */
   html, body {
-    overflow-x:hidden;
+    overflow-x:inherit;
 }
   /* Remove formatting from links*/
 
