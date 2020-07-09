@@ -158,12 +158,15 @@
     }
   }
   .fancy-container {
+    display: flex;
+    align-items: center;
     width: 100%;
   }
 
   #FancyHeader {
     margin: 5vw 0 0 0;
     padding: 0 60px 0 30%;
+    max-width: 900px;
     overflow: hidden;
     font-weight: 600;
     line-height: 1.1;
