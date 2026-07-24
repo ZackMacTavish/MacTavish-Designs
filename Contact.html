@@ -55,59 +55,48 @@
             <h2 class="Form-Text">I'm happy to hear from you</h2>
         </div>
         <div class="row">
-            <form method="post" action="#" class="contact-form">
+            <form id="contact-form" class="contact-form">
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label for="name">Name</label>
-
                     </div>
                     <div class="col span-2-of-3">
                         <input type="text" name="name" id="name" placeholder="Your name" required>
-
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label for="email">Email</label>
-
                     </div>
                     <div class="col span-2-of-3">
                         <input type="email" name="email" id="email" placeholder="Your email" required>
-
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label for="find-us">What is your budget?</label>
-
                     </div>
                     <div class="col span-2-of-3">
-                        <select name="find us" id="find-us">
-                            <option value="friends" selected>$0-500</option>
-                            <option value="search">$500-1000</option>
-                            <option value="ad">$1000-2000</option>
-                            <option value="other">$2000-3000</option>
-                            <option value="other">$3000+</option>
+                        <select name="budget" id="find-us">
+                            <option value="$0-500" selected>$0-500</option>
+                            <option value="$500-1000">$500-1000</option>
+                            <option value="$1000-2000">$1000-2000</option>
+                            <option value="$2000-3000">$2000-3000</option>
+                            <option value="$3000+">$3000+</option>
                         </select>
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label>Newsletter?</label>
-
                     </div>
                     <div class="col span-2-of-3">
-                        <input type="checkbox" name="news" id="news" checked> Yes, please
+                        <input type="checkbox" name="newsletter" id="news" checked> Yes, please
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label>Drop us a line</label>
-
                     </div>
                     <div class="col span-2-of-3">
                         <textarea name="message" placeholder="Your message"></textarea>
@@ -116,21 +105,65 @@
                 <div class="row">
                     <div class="col span-1-of-3">
                         <label>&nbsp;</label>
-
                     </div>
                     <div class="col span-2-of-3">
                         <input type="submit" value="Send it!" class="Send-it">
+                        <p id="form-status" style="margin-top:12px; font-size:0.95em;"></p>
                     </div>
                 </div>
-
-                <!--<h1 class="typeme-2">Let's
-                    <span class="typer" id="main" data-words="design a website,build a website,get creative,redesign your brand,get coffee,go for a run,talk design and code" data-delay="100" data-deleteDelay="1000"></span>
-                    <span class="cursor" data-owner="main"></span>
-                    </h1>
-                    <p></p> -->
-
-
             </form>
+        </div>
+
+        <script>
+          (function () {
+            // ─── Formspree setup ──────────────────────────────────────────────
+            // 1. Go to https://formspree.io and sign in with zmactavish@gmail.com
+            // 2. Create a new form — copy the form ID (looks like "xyzabcde")
+            // 3. Replace REPLACE_WITH_YOUR_FORM_ID below with that ID
+            var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqeryqlq';
+            // ─────────────────────────────────────────────────────────────────
+
+            var form = document.getElementById('contact-form');
+            var status = document.getElementById('form-status');
+
+            form.addEventListener('submit', function (e) {
+              e.preventDefault();
+
+              var submitBtn = form.querySelector('[type="submit"]');
+              submitBtn.disabled = true;
+              submitBtn.value = 'Sending…';
+              status.textContent = '';
+              status.style.color = '';
+
+              var data = new FormData(form);
+
+              fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+              })
+              .then(function (res) {
+                if (res.ok) {
+                  status.textContent = 'Message sent! I\'ll be in touch soon.';
+                  status.style.color = '#2a9d3f';
+                  form.reset();
+                } else {
+                  return res.json().then(function (json) {
+                    throw new Error(json.error || 'Submission failed.');
+                  });
+                }
+              })
+              .catch(function (err) {
+                status.textContent = 'Something went wrong — please try again or email zmactavish@gmail.com directly.';
+                status.style.color = '#c0392b';
+              })
+              .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.value = 'Send it!';
+              });
+            });
+          })();
+        </script>
 
 
        
@@ -142,12 +175,9 @@
     </div>
 
     
-    <script src="Jquery.js"></script>
     <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/respond@0.9.0/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="Jquery.js"></script>
     <script  src="./Zack.js"></script>
+    <script src="dev-widget.js"></script>
  </body>

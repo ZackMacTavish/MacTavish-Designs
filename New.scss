@@ -39,32 +39,49 @@
 /* Header */
 /*-------------------------------------------*/
   
+// On the black hero section the nav pill is dark; on white sections it's the white glass
+nav.nav--dark .header {
+    background: rgba(28, 28, 28, 0.85);
+    -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+nav.nav--dark .header a { color: #ffffff; }
+nav.nav--dark .header a:hover { color: #cccccc; }
+nav.nav--dark .Logo { filter: brightness(0) invert(1); }
+
+nav.nav--light .header { background: rgba(255, 255, 255, 0.75); }
+nav.nav--light .header a { color: #000000; }
+nav.nav--light .Logo { filter: none; }
+
 .parent {
     position: fixed;
-    top: 0;
-  left: 0;
-  margin: auto;
-    width: 100%;
+    top: 16px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 1560px;
+    z-index: 1000;
 }
 
 .header-rectangle {
-    height: 100px;
-    width: 100%;
-  background-color: white;
-  top: 0;
-  left: 0;
-  position: fixed;
-  opacity: 1;
+    display: none;
   }
 
 .header {
-    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 2em 2em 2em;
-    z-index: 8;
+    padding: 0.9em 2em;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.75);
+    -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+    border-radius: 9999px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     
 }
 
@@ -73,7 +90,8 @@
     flex: 0.5;
     flex-direction: row;
     text-decoration: none;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 24px;
     align-items: center;
     list-style: none;
 
@@ -102,17 +120,19 @@
 .animation-section {
       display: flex;
       flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    background: #000;
     margin: auto;
-    z-index: -5;
-    
     }
 
     .intro-text {
-      
+      font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+      line-height: 1.5;
+      color: #ffffff;
       margin: 0 25vw 0 25vw;
-
 
       @media (max-width: 900px) {
         width: 60%;
@@ -157,28 +177,150 @@
       text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40, -61px 61px #4a4a4d, -62px 62px #4a4a4d, -63px 63px #4a4a4d, -64px 64px #4a4a4d, -65px 65px #4a4a4d, -66px 66px #4a4a4d, -67px 67px #4a4a4d, -68px 68px #4a4a4d, -69px 69px #4a4a4d, -70px 70px #4a4a4d, -71px 71px #4a4a4d, -72px 72px #4a4a4d, -73px 73px #4a4a4d, -74px 74px #4a4a4d, -75px 75px #4a4a4d, -76px 76px #4a4a4d, -77px 77px #4a4a4d, -78px 78px #4a4a4d, -79px 79px #4a4a4d, -80px 80px #4a4a4d, -81px 81px #575759, -82px 82px #575759, -83px 83px #575759, -84px 84px #575759, -85px 85px #575759, -86px 86px #575759, -87px 87px #575759, -88px 88px #575759, -89px 89px #575759, -90px 90px #575759, -91px 91px #575759, -92px 92px #575759, -93px 93px #575759, -94px 94px #575759, -95px 95px #575759, -96px 96px #575759, -97px 97px #575759, -98px 98px #575759, -99px 99px #575759, -100px 100px #575759;
     }
   }
+// Generates a 60-layer diagonal text-shadow stack from 5 colour stops.
+// Each keyframe rotates which colour occupies which depth band,
+// creating the illusion that the shadow is spinning.
+@function make-shadow($c1, $c2, $c3, $c4, $c5, $depth: 60) {
+  $shadows: 0px 0px $c1;
+  @for $i from 1 through $depth {
+    $color: $c1;
+    @if    $i >= $depth * 0.8 { $color: $c5; }
+    @else if $i >= $depth * 0.6 { $color: $c4; }
+    @else if $i >= $depth * 0.4 { $color: $c3; }
+    @else if $i >= $depth * 0.2 { $color: $c2; }
+    $xi: ($i * -1) * 1px;
+    $yi: $i * 1px;
+    $shadows: $shadows, $xi $yi $color;
+  }
+  @return $shadows;
+}
+
+// Slab shadow — deep blue-black palette, heavy & mechanical
+@keyframes animateShadowSlab {
+  0%   { text-shadow: make-shadow(#c0cce8, #b0bce0, #d0d8f0, #a0acd8, #e0e4f8); }
+  20%  { text-shadow: make-shadow(#b0bce0, #d0d8f0, #a0acd8, #e0e4f8, #c0cce8); }
+  40%  { text-shadow: make-shadow(#d0d8f0, #a0acd8, #e0e4f8, #c0cce8, #b0bce0); }
+  60%  { text-shadow: make-shadow(#a0acd8, #e0e4f8, #c0cce8, #b0bce0, #d0d8f0); }
+  80%  { text-shadow: make-shadow(#e0e4f8, #c0cce8, #b0bce0, #d0d8f0, #a0acd8); }
+  100% { text-shadow: make-shadow(#c0cce8, #b0bce0, #d0d8f0, #a0acd8, #e0e4f8); }
+}
+
+// Serif shadow — warm brown-black palette, classical & editorial
+@keyframes animateShadowSerif {
+  0%   { text-shadow: make-shadow(#dcc8b8, #ccb8a8, #e8d8c8, #bca898, #f0e4d8); }
+  20%  { text-shadow: make-shadow(#ccb8a8, #e8d8c8, #bca898, #f0e4d8, #dcc8b8); }
+  40%  { text-shadow: make-shadow(#e8d8c8, #bca898, #f0e4d8, #dcc8b8, #ccb8a8); }
+  60%  { text-shadow: make-shadow(#bca898, #f0e4d8, #dcc8b8, #ccb8a8, #e8d8c8); }
+  80%  { text-shadow: make-shadow(#f0e4d8, #dcc8b8, #ccb8a8, #e8d8c8, #bca898); }
+  100% { text-shadow: make-shadow(#dcc8b8, #ccb8a8, #e8d8c8, #bca898, #f0e4d8); }
+}
+
+// Syne shadow — deep violet palette, modern creative editorial
+@keyframes animateShadowSyne {
+  0%   { text-shadow: make-shadow(#d4ccee, #c4bce4, #b8aede, #e0daf2, #a898d8); }
+  20%  { text-shadow: make-shadow(#c4bce4, #b8aede, #e0daf2, #a898d8, #d4ccee); }
+  40%  { text-shadow: make-shadow(#b8aede, #e0daf2, #a898d8, #d4ccee, #c4bce4); }
+  60%  { text-shadow: make-shadow(#e0daf2, #a898d8, #d4ccee, #c4bce4, #b8aede); }
+  80%  { text-shadow: make-shadow(#a898d8, #d4ccee, #c4bce4, #b8aede, #e0daf2); }
+  100% { text-shadow: make-shadow(#d4ccee, #c4bce4, #b8aede, #e0daf2, #a898d8); }
+}
+
+// Fraunces shadow — forest green palette, old letterpress ink
+@keyframes animateShadowFraunces {
+  0%   { text-shadow: make-shadow(#b8d8b8, #a8cca8, #cce4cc, #98c098, #d8ecd8); }
+  20%  { text-shadow: make-shadow(#a8cca8, #cce4cc, #98c098, #d8ecd8, #b8d8b8); }
+  40%  { text-shadow: make-shadow(#cce4cc, #98c098, #d8ecd8, #b8d8b8, #a8cca8); }
+  60%  { text-shadow: make-shadow(#98c098, #d8ecd8, #b8d8b8, #a8cca8, #cce4cc); }
+  80%  { text-shadow: make-shadow(#d8ecd8, #b8d8b8, #a8cca8, #cce4cc, #98c098); }
+  100% { text-shadow: make-shadow(#b8d8b8, #a8cca8, #cce4cc, #98c098, #d8ecd8); }
+}
+
+// Bodoni shadow — deep burgundy/wine, dramatic contrast
+@keyframes animateShadowBodoni {
+  0%   { text-shadow: make-shadow(#e8cad2, #dcbac6, #f0d4dc, #d0aab8, #f8e0e8); }
+  20%  { text-shadow: make-shadow(#dcbac6, #f0d4dc, #d0aab8, #f8e0e8, #e8cad2); }
+  40%  { text-shadow: make-shadow(#f0d4dc, #d0aab8, #f8e0e8, #e8cad2, #dcbac6); }
+  60%  { text-shadow: make-shadow(#d0aab8, #f8e0e8, #e8cad2, #dcbac6, #f0d4dc); }
+  80%  { text-shadow: make-shadow(#f8e0e8, #e8cad2, #dcbac6, #f0d4dc, #d0aab8); }
+  100% { text-shadow: make-shadow(#e8cad2, #dcbac6, #f0d4dc, #d0aab8, #f8e0e8); }
+}
+
+// Bebas shadow — deep navy, industrial condensed
+@keyframes animateShadowBebas {
+  0%   { text-shadow: make-shadow(#bccce8, #acc0e0, #ccd8f0, #9cb4d8, #dce4f8); }
+  20%  { text-shadow: make-shadow(#acc0e0, #ccd8f0, #9cb4d8, #dce4f8, #bccce8); }
+  40%  { text-shadow: make-shadow(#ccd8f0, #9cb4d8, #dce4f8, #bccce8, #acc0e0); }
+  60%  { text-shadow: make-shadow(#9cb4d8, #dce4f8, #bccce8, #acc0e0, #ccd8f0); }
+  80%  { text-shadow: make-shadow(#dce4f8, #bccce8, #acc0e0, #ccd8f0, #9cb4d8); }
+  100% { text-shadow: make-shadow(#bccce8, #acc0e0, #ccd8f0, #9cb4d8, #dce4f8); }
+}
+
+// Cormorant shadow — deep teal-slate, refined editorial
+@keyframes animateShadowCormorant {
+  0%   { text-shadow: make-shadow(#a8d4d4, #bcdedc, #94c8c8, #cce8e8, #80bcbc); }
+  20%  { text-shadow: make-shadow(#bcdedc, #94c8c8, #cce8e8, #80bcbc, #a8d4d4); }
+  40%  { text-shadow: make-shadow(#94c8c8, #cce8e8, #80bcbc, #a8d4d4, #bcdedc); }
+  60%  { text-shadow: make-shadow(#cce8e8, #80bcbc, #a8d4d4, #bcdedc, #94c8c8); }
+  80%  { text-shadow: make-shadow(#80bcbc, #a8d4d4, #bcdedc, #94c8c8, #cce8e8); }
+  100% { text-shadow: make-shadow(#a8d4d4, #bcdedc, #94c8c8, #cce8e8, #80bcbc); }
+}
+
+// Abril shadow — deep crimson, ultra-bold display
+@keyframes animateShadowAbril {
+  0%   { text-shadow: make-shadow(#ecc0c0, #e0b0b0, #f4d0d0, #d4a0a0, #fce0e0); }
+  20%  { text-shadow: make-shadow(#e0b0b0, #f4d0d0, #d4a0a0, #fce0e0, #ecc0c0); }
+  40%  { text-shadow: make-shadow(#f4d0d0, #d4a0a0, #fce0e0, #ecc0c0, #e0b0b0); }
+  60%  { text-shadow: make-shadow(#d4a0a0, #fce0e0, #ecc0c0, #e0b0b0, #f4d0d0); }
+  80%  { text-shadow: make-shadow(#fce0e0, #ecc0c0, #e0b0b0, #f4d0d0, #d4a0a0); }
+  100% { text-shadow: make-shadow(#ecc0c0, #e0b0b0, #f4d0d0, #d4a0a0, #fce0e0); }
+}
+
+// DM Serif shadow — amber-black, warm editorial
+@keyframes animateShadowDM {
+  0%   { text-shadow: make-shadow(#e4d4a0, #d8c890, #eee0b0, #ccc080, #f8f0c8); }
+  20%  { text-shadow: make-shadow(#d8c890, #eee0b0, #ccc080, #f8f0c8, #e4d4a0); }
+  40%  { text-shadow: make-shadow(#eee0b0, #ccc080, #f8f0c8, #e4d4a0, #d8c890); }
+  60%  { text-shadow: make-shadow(#ccc080, #f8f0c8, #e4d4a0, #d8c890, #eee0b0); }
+  80%  { text-shadow: make-shadow(#f8f0c8, #e4d4a0, #d8c890, #eee0b0, #ccc080); }
+  100% { text-shadow: make-shadow(#e4d4a0, #d8c890, #eee0b0, #ccc080, #f8f0c8); }
+}
+
+// Light grey override — this wins over the hardcoded dark version above
+@keyframes animateShadow {
+  0%   { text-shadow: make-shadow(#d4d4d6, #c4c4c6, #b4b4b6, #e0e0e2, #a8a8aa); }
+  20%  { text-shadow: make-shadow(#c4c4c6, #b4b4b6, #e0e0e2, #a8a8aa, #d4d4d6); }
+  40%  { text-shadow: make-shadow(#b4b4b6, #e0e0e2, #a8a8aa, #d4d4d6, #c4c4c6); }
+  60%  { text-shadow: make-shadow(#e0e0e2, #a8a8aa, #d4d4d6, #c4c4c6, #b4b4b6); }
+  80%  { text-shadow: make-shadow(#a8a8aa, #d4d4d6, #c4c4c6, #b4b4b6, #e0e0e2); }
+  100% { text-shadow: make-shadow(#d4d4d6, #c4c4c6, #b4b4b6, #e0e0e2, #a8a8aa); }
+}
+
   .fancy-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
   }
 
   #FancyHeader {
     display: flex;
     align-items: center;
-    margin: 5vh 0 0 0;
-    padding: 0 15vw 0 35%;
+    justify-content: center;
+    width: 100%;
+    height: 28vh;
+    margin: 29vh 0 0 0;
+    padding: 0 8vw;
     max-width: 100%;
     //overflow: hidden;
     font-weight: 600;
     line-height: 1.1;
-    text-align:left;
+    text-align: center;
     /*-webkit-transform: translate(20%, 0%);
         -ms-transform: translate(20%, 0%);
             transform: translate(20%, 0%); */
-    font-size: 3.2vw;
-    color: #cfcfcf;
-    font-family: "Georgia";
+    font-size: 3.5vw;
+    color: #000000;
+    font-family: 'itc_avant_garde_gothicbook', sans-serif;
     text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40, -61px 61px #4a4a4d, -62px 62px #4a4a4d, -63px 63px #4a4a4d, -64px 64px #4a4a4d, -65px 65px #4a4a4d, -66px 66px #4a4a4d, -67px 67px #4a4a4d, -68px 68px #4a4a4d, -69px 69px #4a4a4d, -70px 70px #4a4a4d, -71px 71px #4a4a4d, -72px 72px #4a4a4d, -73px 73px #4a4a4d, -74px 74px #4a4a4d, -75px 75px #4a4a4d, -76px 76px #4a4a4d, -77px 77px #4a4a4d, -78px 78px #4a4a4d, -79px 79px #4a4a4d, -80px 80px #4a4a4d, -81px 81px #575759, -82px 82px #575759, -83px 83px #575759, -84px 84px #575759, -85px 85px #575759, -86px 86px #575759, -87px 87px #575759, -88px 88px #575759, -89px 89px #575759, -90px 90px #575759, -91px 91px #575759, -92px 92px #575759, -93px 93px #575759, -94px 94px #575759, -95px 95px #575759, -96px 96px #575759, -97px 97px #575759, -98px 98px #575759, -99px 99px #575759, -100px 100px #575759;
     -webkit-animation-name: animateShadow;
             animation-name: animateShadow;
@@ -186,62 +328,58 @@
             animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
+    filter: url(#sticker) drop-shadow(0 0 1px white);
 
-            @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
-
-@media (max-width: 1490px) {
-  margin: 7vh 0 6vh -7%;
- 
-}
-
-            @media (max-width: 1330px) {
-              margin: 7vh 0 6vh -5%;
-             
-            }
-            @media (max-width: 980px) {
-              margin: 9vh 0 6vh 0;
-              font-size: 3.9vw;
-             }
-             @media (max-width: 820px) {
-              margin: 12vh 0 2vh -8%;
-              font-size: 5.3vw;
-             }
-
-
-            @media (max-width: 680px) {
-              margin: 12vh 0 6vh -6%;
-              font-size: 5.9vw;
-            }
-
-            @media (max-width: 560px) {
-              margin: 9vh 0 2vh 0;
-              font-size: 7vw;
-              padding: 1.5vh 0 0 20vw;
-            }
-
-            @media (max-width: 415px) {
-              margin: 13vh 0 2vh 0;
-              font-size: 9vw;
-              padding: 0.5vh 0 0 10vw;
-              overflow-x: hidden;
-            }
-            @media (max-width: 360px) {
-              margin: 11vh 0 2vh 0;
-              font-size: 9vw;
-              padding: 0.5vh 0 0 10vw;
-              overflow-x: hidden;
-            }
-            @media (max-width: 330px) {
-              margin: 13vh 0 2vh 0;
-              font-size: 9vw;
-              padding: 0.5vh 0 0 10vw;
-              overflow-x: hidden;
-            }
+            @media (max-width: 980px) { font-size: 3.9vw; }
+            @media (max-width: 820px) { font-size: 5.3vw; }
+            @media (max-width: 680px) { font-size: 5.9vw; }
+            @media (max-width: 560px) { font-size: 7vw; }
+            @media (max-width: 415px) { font-size: 9vw; overflow-x: hidden; }
+            @media (max-width: 330px) { font-size: 9vw; overflow-x: hidden; }
 
   }
 
+#FancyHeader h1 {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  #FancyHeader h1 { transform: none !important; }
+}
+
+@media (max-width: 480px) {
+  #FancyHeader h1 { white-space: normal; transform: none !important; }
+}
+
+#FancyHeader.font-sans { animation-name: animateShadow; }
+#FancyHeader.font-sans h1 { font-family: 'itc_avant_garde_gothicbook', sans-serif; }
+
+#FancyHeader.font-slab { animation-name: animateShadowSlab; }
+#FancyHeader.font-slab h1 { font-family: 'Alfa Slab One', Georgia, serif; transform: scaleX(0.95); }
+
+#FancyHeader.font-serif { animation-name: animateShadowSerif; }
+#FancyHeader.font-serif h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; }
+
+#FancyHeader.font-syne { animation-name: animateShadowSyne; }
+#FancyHeader.font-syne h1 { font-family: 'Syne', sans-serif; font-weight: 800; transform: scaleX(0.60); }
+
+#FancyHeader.font-fraunces { animation-name: animateShadowFraunces; }
+#FancyHeader.font-fraunces h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+
+#FancyHeader.font-bodoni { animation-name: animateShadowBodoni; }
+#FancyHeader.font-bodoni h1 { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 900; font-style: italic; }
+
+#FancyHeader.font-bebas { animation-name: animateShadowBebas; }
+#FancyHeader.font-bebas h1 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.06em; transform: scaleX(1.12); }
+
+#FancyHeader.font-cormorant { animation-name: animateShadowCormorant; }
+#FancyHeader.font-cormorant h1 { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; transform: scaleX(1.16); }
+
+#FancyHeader.font-abril { animation-name: animateShadowAbril; }
+#FancyHeader.font-abril h1 { font-family: 'Righteous', sans-serif; }
+
+#FancyHeader.font-dm { animation-name: animateShadowDM; }
+#FancyHeader.font-dm h1 { font-family: 'Inknut Antiqua', Georgia, serif; font-weight: 800; transform: scaleX(0.88); }
 
 .arrow-section {
   
@@ -249,29 +387,28 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin: -15% 0 0 0;
+    margin: 17vh 0 0 0;
 
     @media (max-width: 820px) {
-      margin: -10em 0 0 0;
-      
+      margin: 10vh 0 0 0;
     }
 
     @media (max-width: 560px) {
-      margin: -7em 0 0 0;
-      
+      margin: 8vh 0 0 0;
     }
     
     @media (max-width: 400px) {
-      margin: -7em 0 0 0;
+      margin: 8vh 0 0 0;
     }
     @media (max-width: 330px) {
-      margin: -3em 0 0 0;
+      margin: 8vh 0 0 0;
     }
    
 }
 
   .arrow {
-    max-width: 5%;
+    max-width: 2%;
+    filter: brightness(0) invert(1);
       margin: 0.4em 0 0 0;
 
       @media (max-width: 915px) {
@@ -294,12 +431,18 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
       }
     }
 
+.my-work-label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .My-Work-Text {
-  display: flex; 
-  align-items: center;
+  display: block;
+  width: fit-content;
     font-family: 'itc_avant_garde_gothicbook';
     font-size: 5vw;
-    margin: 0 0 0 5vw;
+    margin: 0;
 
     @media (max-width: 560px) {
       font-size: 7vw;
@@ -312,11 +455,11 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
 .Line {
   position: relative;
   z-index: -40;
+  height: auto;
   @media (max-width: 800px) {
     width: 60%;
   }
   @media (max-width: 505px) {
-
     width: 95%;
   }
 }
@@ -333,7 +476,8 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
 /*-------------------------------------------*/
   .my-projects-2 {
     position: relative;
-    float:left;
+    width: 100%;
+    overflow: hidden;
     margin: 2em 0 0 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -387,6 +531,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
   }
   
   .meal-photo img  {
+    display: block;
     position: relative;
     opacity: 1;
     width: 100%;
@@ -405,7 +550,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
             box-sizing: border-box;
   }
   
-  .meal-photo img:hover  {
+  .meal-photo:hover img  {
     opacity: 0.3;
     -webkit-transform: scale(1.23);
         -ms-transform: scale(1.23);
@@ -448,6 +593,8 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     text-align: center;
     font-family: 'itc_avant_garde_gothicbook';
     color: #ffffff;
+    cursor: pointer;
+    user-select: none;
 }
 
 //ThreePillars + Box Hover
@@ -456,7 +603,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .ThreePillarsText {  
+  .meal-photo:hover .ThreePillarsText {  
     opacity: 1;
     
   }
@@ -466,7 +613,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
   @include text-hover-styles
   }
   
-  .meal-photo img:hover + .VaynerSportsText {  
+  .meal-photo:hover .VaynerSportsText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -478,7 +625,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .PitonFitnessText {  
+  .meal-photo:hover .PitonFitnessText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -488,7 +635,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .LoudLuxuryText {  
+  .meal-photo:hover .LoudLuxuryText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -498,7 +645,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .FUULText {  
+  .meal-photo:hover .FUULText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -508,7 +655,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .CCAText {  
+  .meal-photo:hover .CCAText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -517,7 +664,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
   .BVTText {
     @include text-hover-styles
   }
-  .meal-photo img:hover + .BVTText {  
+  .meal-photo:hover .BVTText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -527,7 +674,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     @include text-hover-styles
   }
   
-  .meal-photo img:hover + .SeriousText {  
+  .meal-photo:hover .SeriousText {  
     opacity: 1;
     color: #ffffff;
   }
@@ -596,7 +743,7 @@ and (max-device-width : 1024px)  { margin: 10vh 0 5vh 0;}
     
       .ThreePillars-copy {
     color: #6F777B;
-    line-height: 1.2;
+    line-height: 1.8;
     }
 
     @mixin header-styles {
@@ -804,6 +951,7 @@ width: 35vw;
       }
       .row-4 {
         @include row-styles;
+        padding-bottom: 60px;
         @media (max-width: 505px) {
           flex-direction: column;
         }
@@ -813,17 +961,38 @@ width: 35vw;
           width: 45vw;
           margin: 1vw 1vw 10px 1vw;
           border-radius: 15px;
-          
+          position: relative;
+          overflow: hidden;
+          background-color: #000;
+          cursor: pointer;
 
-          /* &:hover {
-            opacity: 0.9;
-            z-index: -5;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            opacity: 1;
+            -webkit-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                    transform: scale(1.05);
+            -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s;
           }
 
-          &:active {  
-            opacity: 0.9;
-            z-index: -5;
-          }*/
+          &:hover img {
+            opacity: 0.3;
+            -webkit-transform: scale(1.23);
+                -ms-transform: scale(1.23);
+                    transform: scale(1.23);
+          }
+
+          .card-title {
+            @include text-hover-styles;
+          }
+
+          &:hover .card-title {
+            opacity: 1;
+            color: #ffffff;
+          }
 
           @media (max-width: 505px) {
             width: 95vw;
@@ -881,6 +1050,9 @@ width: 35vw;
       }
     }
     .copy {
+      p {
+        line-height: 1.8;
+      }
       @media (max-width: 400px) {
         width: 90vw;
       }
@@ -894,7 +1066,7 @@ width: 35vw;
   }
   
       .My-Photo {
-        
+        border-radius: 20px;
         width: 40%;
         margin: auto;
         @media (max-width: 760px) {
