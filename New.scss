@@ -33,7 +33,7 @@
          url('Fonts/itc_avant_garde_gothic_book_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
   }
 
   /*-------------------------------------------*/
@@ -161,7 +161,7 @@ nav.nav--light .Logo { filter: none; }
       line-height: 1.5;
       color: #ffffff;
       text-align: center;
-      margin: 0 25vw 0 25vw;
+      margin: 0 22vw 0 22vw;
 
       @media (max-width: 900px) {
         width: 60%;
@@ -577,7 +577,7 @@ nav.nav--light .Logo { filter: none; }
               width: 50%;
             }
 
-            @media (max-width: 480px) {
+            @media (max-width: 560px) {
               width: 100%;
             }
     }

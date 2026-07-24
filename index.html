@@ -30,7 +30,7 @@
           <!-- Step 2: fill shape — Gaussian blur leaks into counters/gaps from all
                surrounding strokes, filling holes up to ~100px wide. The outer
                boundary stays close to the original (large filled areas don't expand). -->
-          <feGaussianBlur in="blob" stdDeviation="50" result="blurred"/>
+          <feGaussianBlur in="blob" stdDeviation="40" result="blurred"/>
           <feComponentTransfer in="blurred" result="filledBlob">
             <feFuncA type="discrete" tableValues="0 1"/>
           </feComponentTransfer>
@@ -96,7 +96,7 @@
 
                         <section class="arrow-section"> 
                         
-                            <h2 class="intro-text">Zack MacTavish Design is a graphic design studio located in Philadelphia, PA specializing in branding design, and digital design.</h2>
+                            <h2 class="intro-text">I'm Zack MacTavish, a Philadelphia-based designer helping businesses build their brand and digital presence, from identity systems to websites to UX/UI for web and mobile.</h2>
                             <img class="arrow" src="resources/img/arrow-animate.gif" alt="Scroll Down">
                             
                         </section>
@@ -184,10 +184,7 @@
         </section>
 
     
-    <script src="vendors/js/jquery.waypoints.min.js"></script>
-    <script src="Jquery.js"></script>
-    <script  src="./Zack.js"></script>
-    <script src="dev-widget.js"></script>
+    <!-- Animation initialised immediately — no dependency on jQuery or dev-widget -->
     <script>
       (function () {
         var el = document.getElementById('FancyHeader');
@@ -197,7 +194,12 @@
         var current = 0;
         var paused = false;
         var lastSwitch = Date.now();
+        // fonts[0] uses the preloaded local font — safe to apply immediately
         el.classList.add(fonts[0]);
+
+        // Play / pause SVGs defined early so applyMotionPreference can use them
+        var pauseSVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="1" width="4" height="14" rx="1"/><rect x="10" y="1" width="4" height="14" rx="1"/></svg>';
+        var playSVG  = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="3,1 15,8 3,15"/></svg>';
 
         // Respect prefers-reduced-motion on load and on live changes
         var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -209,12 +211,16 @@
           }
         }
 
-        // Switch font at the first animationiteration boundary after 1.1 s has
-        // elapsed. Using elapsed time instead of setInterval eliminates the race
-        // condition where the interval and iteration fire out of sync, causing
-        // the first switch to be delayed by a full extra cycle (~2.2 s).
+        // Gate font rotation on document.fonts.ready — prevents the .sticker-bg
+        // filter from repainting twice when a Google Font loads mid-switch
+        // (once with fallback metrics, once with real font = visible jump).
+        // fonts[0] (local, preloaded) is shown immediately; the rest wait.
+        var fontsLoaded = false;
+        document.fonts.ready.then(function () { fontsLoaded = true; });
+
+        // Switch font at the first animationiteration boundary after 1.1 s.
         el.addEventListener('animationiteration', function () {
-          if (paused) return;
+          if (paused || !fontsLoaded) return;
           var now = Date.now();
           if (now - lastSwitch < 1100) return;
           lastSwitch = now;
@@ -223,13 +229,7 @@
           el.classList.add(fonts[current]);
         });
 
-        // Play / pause toggle
-        var pauseSVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="1" width="4" height="14" rx="1"/><rect x="10" y="1" width="4" height="14" rx="1"/></svg>';
-        var playSVG  = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="3,1 15,8 3,15"/></svg>';
-
-        // Apply on page load
         applyMotionPreference(motionQuery);
-        // React if the user changes the OS/browser setting while the page is open
         motionQuery.addEventListener('change', applyMotionPreference);
 
         if (btn) {
@@ -248,4 +248,8 @@
         }
       })();
     </script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="Jquery.js"></script>
+    <script src="./Zack.js"></script>
+    <script src="dev-widget.js" defer></script>
  </body>
