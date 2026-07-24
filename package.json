@@ -8,6 +8,10 @@
     "serve": "live-server --watch=*.html,output.css,resources",
     "start": "npm-run-all build:widget --parallel sass serve"
   },
+  "overrides": {
+    "braces": ">=3.0.3",
+    "uuid": ">=14.0.0"
+  },
   "devDependencies": {
     "agentation": "^3.0.2",
     "esbuild": "^0.28.1",
