@@ -21,7 +21,12 @@
     <svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="sticker" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
-          <feMorphology in="SourceAlpha" operator="dilate" radius="10" result="dilated"/>
+          <!-- Fatten hairline strokes, then hard-threshold back to crisp binary alpha -->
+          <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blurred"/>
+          <feComponentTransfer in="blurred" result="thresholded">
+            <feFuncA type="discrete" tableValues="0 1"/>
+          </feComponentTransfer>
+          <feMorphology in="thresholded" operator="dilate" radius="10" result="dilated"/>
           <feFlood flood-color="white" result="white"/>
           <feComposite in="white" in2="dilated" operator="in" result="outline"/>
           <feMerge>
@@ -82,6 +87,15 @@
                             <img class="arrow" src="resources/img/arrow-animate.gif" alt="Scroll Down">
                             
                         </section>
+
+                        <button id="anim-toggle" aria-label="Pause animation">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <!-- pause icon (two bars), swapped to play on pause -->
+                                <rect id="bar1" x="2" y="1" width="4" height="14" rx="1"/>
+                                <rect id="bar2" x="10" y="1" width="4" height="14" rx="1"/>
+                            </svg>
+                        </button>
+
         </div>
 
         <div class="My-Work">
@@ -164,15 +178,44 @@
     <script>
       (function () {
         var el = document.getElementById('FancyHeader');
+        var btn = document.getElementById('anim-toggle');
         if (!el) return;
         var fonts = ['font-sans', 'font-slab', 'font-serif', 'font-syne', 'font-fraunces', 'font-bodoni', 'font-bebas', 'font-cormorant', 'font-abril', 'font-dm'];
         var current = 0;
+        var switchPending = false;
+        var paused = false;
         el.classList.add(fonts[0]);
-        setInterval(function () {
+
+        // Queue a switch every 1.1 s but only execute at the exact animation loop
+        // boundary so the animation-name change never interrupts mid-cycle.
+        setInterval(function () { if (!paused) switchPending = true; }, 1100);
+        el.addEventListener('animationiteration', function () {
+          if (paused || !switchPending) return;
+          switchPending = false;
           el.classList.remove(fonts[current]);
           current = (current + 1) % fonts.length;
           el.classList.add(fonts[current]);
-        }, 1100);
+        });
+
+        // Play / pause toggle
+        var pauseSVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="1" width="4" height="14" rx="1"/><rect x="10" y="1" width="4" height="14" rx="1"/></svg>';
+        var playSVG  = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="3,1 15,8 3,15"/></svg>';
+
+        if (btn) {
+          btn.addEventListener('click', function () {
+            paused = !paused;
+            if (paused) {
+              el.style.animationPlayState = 'paused';
+              switchPending = false;
+              btn.innerHTML = playSVG;
+              btn.setAttribute('aria-label', 'Play animation');
+            } else {
+              el.style.animationPlayState = 'running';
+              btn.innerHTML = pauseSVG;
+              btn.setAttribute('aria-label', 'Pause animation');
+            }
+          });
+        }
       })();
     </script>
  </body>
